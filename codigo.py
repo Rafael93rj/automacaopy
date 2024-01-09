@@ -1,4 +1,4 @@
-import pyautogui
+import pyautogui 
 import time
 
 pyautogui.PAUSE = 1 #Declaro que haverá um intervalo de 1s em todos os comandos
