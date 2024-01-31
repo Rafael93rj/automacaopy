@@ -1,43 +1,38 @@
 import pyautogui 
 import time
 
-pyautogui.PAUSE = 1 #Declaro que haverá um intervalo de 1s em todos os comandos
+pyautogui.PAUSE = 1 
 
-pyautogui.press("win") #Etapa 1 (Abrindo o menu)
-pyautogui.write("chrome") #Etapa 2 (Abrindo o brownser)
-pyautogui.press("enter") #Etapa 3 (Executando o navegador)
+pyautogui.press("win") 
+pyautogui.write("chrome") 
+pyautogui.press("enter") 
 
-#Etapa 4 (Navegador)
 link = "https://dlp.hashtagtreinamentos.com/python/intensivao/login"
-pyautogui.click(x=484, y=73) #Click na posição da url
+pyautogui.click(x=484, y=73)
 pyautogui.write(link)
 pyautogui.press("enter")
 
-time.sleep(5) #Declara que nesse trecho de código haverá uma pausa de 5s
+#time.sleep(5)      25.95   6.5     
 
-pyautogui.click(x=925, y=515) #Click na posição de login
+
+pyautogui.click(x=925, y=515) 
 pyautogui.write("rafael@gmail.com")
-pyautogui.press("tab") # passando pro próximo campo
+pyautogui.press("tab") 
 pyautogui.write("sua senha")
-pyautogui.click(x=974, y=721) # clique no botao de login
-time.sleep(3) #Tempo de espera caso haja algum problema na aplicação
+pyautogui.click(x=974, y=721) 
+time.sleep(3) 
 
-#Importando o csv com o Pandas
+
 import pandas as pd
 tabela = pd.read_csv("produtos.csv")
 print(tabela)
 
-# Etapa 5 (Cadastrar um produto)
+
 for linha in tabela.index:
-    # clicar no campo de código
     pyautogui.click(x=952, y=358)
-    # pegar da tabela o valor do campo que a gente quer preencher
     codigo = tabela.loc[linha, "codigo"]
-    # preencher o campo
     pyautogui.write(str(codigo))
-    # passar para o proximo campo
     pyautogui.press("tab")
-    # preencher o campo
     pyautogui.write(str(tabela.loc[linha, "marca"]))
     pyautogui.press("tab")
     pyautogui.write(str(tabela.loc[linha, "tipo"]))
@@ -52,9 +47,8 @@ for linha in tabela.index:
     if not pd.isna(obs):
         pyautogui.write(str(tabela.loc[linha, "obs"]))
     pyautogui.press("tab")
-    pyautogui.press("enter") # cadastra o produto (botao enviar)
-    # dar scroll de tudo pra cima
+    pyautogui.press("enter") 
     pyautogui.scroll(5000)
-    # Passo 5: Repetir o processo de cadastro até o fim
+
 
 
