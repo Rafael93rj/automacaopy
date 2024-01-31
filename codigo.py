@@ -9,16 +9,17 @@ pyautogui.press("enter") #Etapa 3 (Executando o navegador)
 
 #Etapa 4 (Navegador)
 link = "https://dlp.hashtagtreinamentos.com/python/intensivao/login"
+pyautogui.click(x=484, y=73) #Click na posição da url
 pyautogui.write(link)
 pyautogui.press("enter")
 
 time.sleep(5) #Declara que nesse trecho de código haverá uma pausa de 5s
 
-pyautogui.click(x=506, y=359) #Click na posição de login
-pyautogui.write("pythonimpressionador@gmail.com")
+pyautogui.click(x=925, y=515) #Click na posição de login
+pyautogui.write("rafael@gmail.com")
 pyautogui.press("tab") # passando pro próximo campo
 pyautogui.write("sua senha")
-pyautogui.click(x=651, y=519) # clique no botao de login
+pyautogui.click(x=974, y=721) # clique no botao de login
 time.sleep(3) #Tempo de espera caso haja algum problema na aplicação
 
 #Importando o csv com o Pandas
@@ -29,7 +30,7 @@ print(tabela)
 # Etapa 5 (Cadastrar um produto)
 for linha in tabela.index:
     # clicar no campo de código
-    pyautogui.click(x=499, y=245)
+    pyautogui.click(x=952, y=358)
     # pegar da tabela o valor do campo que a gente quer preencher
     codigo = tabela.loc[linha, "codigo"]
     # preencher o campo
