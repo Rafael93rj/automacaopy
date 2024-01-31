@@ -12,8 +12,7 @@ pyautogui.click(x=484, y=73)
 pyautogui.write(link)
 pyautogui.press("enter")
 
-#time.sleep(5)      25.95   6.5     
-
+#time.sleep(5)  
 
 pyautogui.click(x=925, y=515) 
 pyautogui.write("rafael@gmail.com")
